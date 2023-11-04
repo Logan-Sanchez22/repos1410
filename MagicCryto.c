@@ -1,15 +1,33 @@
+// Inclusion of libraries 
 #include <stdio.h>
 #include <string.h>
 
+// Declartion of functions created and used in this program. Some are useless and for de-bugging. 
+// Most functions are used. Ones for debugging and testing are: writing and check. 
+
+//used for creating the .crp or .txt files 
 int creating(FILE** fp, char file[128]);
-//int createCRP(FILE* fp, char nameFile[128]);
-//int createTxt(FILE* fp, char nameFile[128]);
+
+//removes the last character of a given array. I used this fucntion to remove the '\n'
+//charcter from the end of the stdin given input 
 void removeLast(char array[]);
+
+//used to add text to a file, mainly used to test my program by adding text to a .txt and then encrypting it 
 int writing(FILE** fIn, char file[]);
+
+//adds .txt to the end of a given array 
 void addTXT(char array[]);
-void addCRP(char array[]);
-void encrypt(FILE** fp, FILE** fOut, char fileTxt[], char fileCrp[]);
+
+//adds .crp to the end of a given array 
+void addCRP(char array[]);\
+
+//encrypts a given .txt file by creating the appropriately named .crp file and storing the encrypted text
+void encrypt(FILE** fIn, FILE** fOut, char fileTxt[], char fileCrp[]);
+
+//used to check if the end of the array ended in '\n'. past debugging, not used. 
 int check(char array[]);
+
+//decrypts a given .crp file by creating the appropriately named .txt file and storing the encrypted text
 void decrypt(FILE** fIn, FILE** fOut, char fileTxt[], char fileCrp[]);
 
 
